@@ -1,0 +1,54 @@
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+  <div class="hd">
+      <h1>
+        <%= current_user.username %>'s Photos 
+      </h1>
+  </div>
+  <br/>
+</head>
+
+<body>
+	<div class="pt-idx">
+
+		<p>
+		  <strong>Title:</strong>
+		  <%= @photo.title %>
+		</p>
+
+		<p>
+		  <strong>Image:</strong>
+		  <%= @photo.image %>
+		</p>
+
+		<br/>
+
+		<div id='comments'>
+			<%=render @photo.comments%>
+		</div>
+
+		<div>
+			<%=form_for([@photo, @photo.comments.new]) do |f| %>
+				<div class='field'>
+					<%= f.label :Comment %>
+					<%= f.text_field :description, placeholder: "description" %>
+				</div>
+
+				<div class='actions'>
+					<%= f.submit 'Add' %>
+				</div>
+				<br/>
+				<%end%>
+
+		</div>
+
+		<%= link_to 'Edit', edit_photo_path(@photo) %> |
+		<%= link_to 'Back', photos_path(@photo) %>
+	</div>
+
+</body>
+

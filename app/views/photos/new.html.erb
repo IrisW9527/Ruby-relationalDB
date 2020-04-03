@@ -1,0 +1,21 @@
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+  <div class="hd">
+      <h1>
+        <%= current_user.username %>'s Photos 
+      </h1>
+  </div>
+  <br/>
+</head>
+
+<div class="pt-idx">
+	<%= render 'form', photo: @photo %>
+	<br/>
+	<%= link_to 'Back', photos_path %>
+</div>
+
+

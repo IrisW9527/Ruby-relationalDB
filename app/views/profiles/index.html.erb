@@ -1,0 +1,40 @@
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+	<div class="hd">
+		<h1> 
+			<%= current_user.username %>'s Profile
+		</h1>
+	
+	</div>
+	<br/>
+</head>
+
+<body>
+	<div class="pf-tbbg">
+		<table class="pf-tb">
+			<tr>
+				<th>Firstname: </th>
+				<td><%=current_user.profile.firstname%></td>
+			</tr>
+			<tr>
+				<th>Lastname: </th>
+				<td><%=current_user.profile.lastname%></td>
+			</tr>
+			<tr>
+				<th>Bio: </th>
+				<td><%=current_user.profile.bio%></td>
+			</tr>
+			<tr>
+				<th>Groups: </th>
+				<td><%= link_to 'See', controller: "groups", action: "index" %></td>
+			</tr>			
+		</table>
+	</div>
+</body>
+
+
+

@@ -1,0 +1,32 @@
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+	<div class="hd">
+		<h1> 
+			<%= current_user.username %>'s Groups
+		</h1>
+	
+	</div>
+	<br/>
+</head>
+
+<body>
+	<div class="gp-tbbg">
+		<table class="gp-tb">
+			<tr>
+				<th>Group name: </th>
+				<td>
+					<% current_user.groups.each do |a| %>
+						<li> <%=a.name%> </li> 
+					<%end%>
+				</td>
+			</tr>			
+		</table>
+
+		<%= link_to('Back', controller: "profiles", action: "index") %>
+
+	</div>
+</body>
