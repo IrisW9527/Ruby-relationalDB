@@ -23,6 +23,7 @@ test:
 production:
   # <<: *default
   adapter: postgresql
-  database: app-dev
-  username: user
+  database: project-phase1
+  username: patate
+  password: qwe123
   host: localhost
