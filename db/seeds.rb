@@ -50,10 +50,13 @@ cmt.comments.create! [
 
 cmt = Photo.find_by title: 'image2'
 cmt.comments.create! [
-	{description: 'going to italy wish me luck'}
+	{description: 'going to italy wish me luck'},
+	{description: 'going back to china actually'}
 ]
 
 cmt = Photo.find_by title: 'image3'
 cmt.comments.create! [
-	{description: 'im out of school'}
+	{description: 'im out of school'},
+	{description: 'i wanna go back to school'},
+	{description: 'i wanna graduate on time'}
 ]
