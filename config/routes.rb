@@ -13,14 +13,14 @@ Rails.application.routes.draw do
   get 'profiles/index'
   get 'profiles/show'
 
-  get 'groups/index'
-  get 'groups/show'
-
+  # get 'groups/index'
+  # get 'groups/show'
 
   resources :photos do
   	resources :comments, only: [:create, :destroy]
   end
 
+  resources :groups
 
   root to: "photos#index"
 

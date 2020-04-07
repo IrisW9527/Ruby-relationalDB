@@ -1,6 +1,7 @@
 <div class="dir">
 	<br/>
 	<%= link_to 'Home', photos_path %>
+	<%= link_to('Groups', controller: "groups", action: "index") %>
 </div>
 
 <head>
@@ -30,7 +31,14 @@
 			</tr>
 			<tr>
 				<th>Groups: </th>
-				<td><%= link_to 'See', controller: "groups", action: "index" %></td>
+				<td>
+					<% current_user.groups.each do |group| %>
+						<li>
+							<%= group.name %>
+						</li>
+						
+					<%end%>				
+				</td>
 			</tr>			
 		</table>
 	</div>

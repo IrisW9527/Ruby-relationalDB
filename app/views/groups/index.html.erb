@@ -1,32 +1,40 @@
 <div class="dir">
-	<br/>
-	<%= link_to 'Home', photos_path %>
+  <br/>
+  <%= link_to 'Home', photos_path %>
+  <%= link_to('Profile', controller: "profiles", action: "index") %>
 </div>
 
 <head>
-	<div class="hd">
-		<h1> 
-			<%= current_user.username %>'s Groups
-		</h1>
-	
-	</div>
-	<br/>
+  <div class="hd">
+      <h1>
+        Groups 
+      </h1>
+  </div>
+  <br/>
 </head>
 
+
 <body>
-	<div class="gp-tbbg">
-		<table class="gp-tb">
-			<tr>
-				<th>Group name: </th>
-				<td>
-					<% current_user.groups.each do |a| %>
-						<li> <%=a.name%> </li> 
-					<%end%>
-				</td>
-			</tr>			
-		</table>
+  <div class="pt-idx">
+        
+      <table class="tb1">
+        <tbody>
+          <% current_user.groups.each do |group| %>
+            <tr>
+              <td><%= group.name %></td>
+              <td><%= link_to 'Show', group %></td>
+              <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-		<%= link_to('Back', controller: "profiles", action: "index") %>
+      <br>
 
-	</div>
+  </div>
+  
+
+
 </body>
+
+

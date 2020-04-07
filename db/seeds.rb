@@ -1,4 +1,3 @@
-# GroupUser.destroy_all
 
 User.all.each do |u|
 	u.groups.clear
@@ -13,27 +12,27 @@ Photo.destroy_all
 users = User.create! [
 	{username: 'patate', password: 'qwe123'},
 	{username: 'doja123', password: '123123'},
-	{username: 'dogandcat', password: '234wer'}
+	{username: 'tomnjerry', password: '234wer'}
 ]
 
 Profile.create! [
-	{firstname: 'iris', lastname: 'wang',bio: 'hello world', user_id: users[0].id },
-	{firstname: 'coco', lastname: 'chanel',bio: 'im a singer', user_id: users[1].id },
-	{firstname: 'tom', lastname: 'jerry',bio: 'i like cartoons', user_id: users[2].id }
+	{firstname: 'Iris', lastname: 'Wang',bio: 'hello world', user_id: users[0].id },
+	{firstname: 'Coco', lastname: 'Chanel',bio: 'im a singer', user_id: users[1].id },
+	{firstname: 'Tom', lastname: 'TheCat',bio: 'i like cartoons', user_id: users[2].id }
 ]
 
 groups = Group.create! [
 	{name: 'shoes' },
 	{name: 'vintage' },
-	{name: 'skincare'},
+	{name: 'food'},
 	{name: 'hiphop'},
 	{name: 'crafts'},
 	{name: 'fashion'},
 	{name: 'travel'}
 ]
-users[0].groups = [groups[0],groups[4]]
-users[1].groups = [groups[1]]
-users[2].groups = [groups[2], groups[3],groups[4],groups[5]]
+users[0].groups = [groups[0]]
+users[1].groups = [groups[1],groups[2],groups[6]]
+users[2].groups = [groups[0],groups[2], groups[3],groups[4],groups[5]]
 
 
 Photo.create! [

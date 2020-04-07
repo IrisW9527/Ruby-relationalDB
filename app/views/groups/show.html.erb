@@ -1,2 +1,37 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+  <div class="hd">
+      <h1>
+        <%= @group.name %> 
+      </h1>
+  </div>
+  <br/>
+</head>
+
+<body>
+	<div class="pt-idx">
+		<p>Image1</p>
+		<p>Image2</p>
+		<p>ImageN</p>
+		<br/>
+
+		<p>Users in this group: </p>
+			
+		<% @group.users.each do |u| %>
+			<li>
+				<%= u.username %>
+
+			</li>		
+		<%end%>
+			
+		<br/>
+		<%= link_to 'Edit', edit_group_path(@group) %> |
+		<%= link_to 'Back', groups_path %>
+	</div>
+</body>
+
+

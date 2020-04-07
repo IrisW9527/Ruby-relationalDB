@@ -1,0 +1,19 @@
+<div class="dir">
+	<br/>
+	<%= link_to 'Home', photos_path %>
+</div>
+
+<head>
+  <div class="hd">
+      <h1>
+        New Group 
+      </h1>
+  </div>
+  <br/>
+</head>
+
+<div class="pt-idx">
+	<%= render 'form', group: @group %>
+	<br/>
+	<%= link_to 'Back', groups_path %>
+</div>
