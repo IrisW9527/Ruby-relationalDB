@@ -11,7 +11,7 @@ Devise.setup do |config|
   # config.secret_key = '5945d25f5a1e9ec7e1a9e04d12ac301390d5ee3e5daf21e1c7a261bbe007afbbabfbc55f4e0cf0b428fef46303fa0eed95dbeb00c99059082af5847996e1c081'
 
   
-  config.assets.initialize_on_precompile = false
+  # config.assets.initialize_on_precompile = false
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
