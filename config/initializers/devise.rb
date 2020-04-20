@@ -10,6 +10,9 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '5945d25f5a1e9ec7e1a9e04d12ac301390d5ee3e5daf21e1c7a261bbe007afbbabfbc55f4e0cf0b428fef46303fa0eed95dbeb00c99059082af5847996e1c081'
 
+  
+  config.assets.initialize_on_precompile = false
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -70,7 +73,7 @@ Devise.setup do |config|
   # given strategies, for example, `config.http_authenticatable = [:database]` will
   # enable it only for database authentication. The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
-  # config.http_authenticatable = false
+  config.http_authenticatable = true
 
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
