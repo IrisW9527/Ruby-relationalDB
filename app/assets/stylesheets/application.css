@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-.signlogin {
+ .signlogin {
 	text-align: right;
 }

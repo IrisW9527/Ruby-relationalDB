@@ -11,8 +11,8 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    # respond_with User.find(params[:id])
     # @photo = Photo.find(params[:id])
-    # authorize! :read, @photo 
   end
 
   # GET /photos/new
