@@ -2,7 +2,7 @@ module Authenticable
 
   # Devise methods overwrites
   def current_user
-    @current_user ||= User.find_by(autotoken: request.headers['Authorization'])
+    @current_user ||= User.find_by(autotoken: request.params['autotoken'])
   end
 
   def authenticate_with_token!

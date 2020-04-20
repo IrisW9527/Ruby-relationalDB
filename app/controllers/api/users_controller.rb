@@ -9,18 +9,20 @@ class Api::UsersController < ApiController
 	    user = User.find(params[:id])
 	    # respond_with current_user
 	    if user
-			render json: {id: user.id, username: user.username, email: user.email, password: user.password, password_confirmation: user.password_confirmation}, status: 200
+			render json: {id: user.id, username: user.username, email: user.email}, status: 200
 		else
 			render json: {error: 'user not found'}, status: 404
 		end
 	end
 
-	# api/users/...
+	# api/users?...
 	def create
 		# user = User.new(user_params)
 		user = User.new(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
 		if user.save
 			render json: {message: 'success'},status: 201
+			# render json: user, status: 201, location: [:api, user]
+			# render json: {username: user.username, email: user.email, password: user.password, password_confirmation: user.password_confirmation}, status: 201
 		else
 			render json: {error: 'bad request'}, status: 400
 		end
@@ -45,7 +47,7 @@ class Api::UsersController < ApiController
 
 	# private
 	# def user_params
-	#     params.fetch(:user,{}).permit(:username, :email,:password, :password_confirmation)
+	#     params.require(:user).permit(:username, :email,:password, :password_confirmation)
 	# end
 
 end

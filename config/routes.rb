@@ -24,13 +24,12 @@ Rails.application.routes.draw do
   end
 
 
-  namespace :api, default: {format: 'json'} do
-    # patch 'users/:id', to: 'users#update'
-    resources :users, :only => [ :show,:create,:update]
+  namespace :api, defaults: {format: 'json'} do
+    resources :sessions, only: [:create]
+    resources :users, only: [ :show,:create,:update]
+    patch 'users', to: 'users#update'
     get 'photos/search', to: 'photos#search'
-    resources :photos, :only => [:index, :show, :search, :create], include: :comments
-    resources :sessions, only: [:create] 
-      
+    resources :photos, only: [:index, :show, :search, :create], include: :comments
   end
 
   
