@@ -7,7 +7,6 @@ class Api::UsersController < ApiController
   	# api/users/id
  	def show
 	    user = User.find(params[:id])
-	    # respond_with current_user
 	    if user
 			render json: {id: user.id, username: user.username, email: user.email}, status: 200
 		else

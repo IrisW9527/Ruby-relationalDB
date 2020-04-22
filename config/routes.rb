@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     resources :users, only: [ :show,:create,:update]
     patch 'users', to: 'users#update'
+    get 'profiles/:user_id', to: 'profiles#show'
     get 'photos/search', to: 'photos#search'
     resources :photos, only: [:index, :show, :search, :create], include: :comments
   end

@@ -1,5 +1,4 @@
 class Api::SessionsController < ApiController
-	# before_action :authenticate_with_token!
 
 	respond_to :json
  	
