@@ -17,7 +17,7 @@ class Api::UsersController < ApiController
 	# api/users?...
 	def create
 		# user = User.new(user_params)
-		user = User.new(email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
+		user = User.new(email: params[:email], username: params[:username], password: params[:password])
 		if user.save
 			render json: {message: 'success'},status: 201
 			# render json: user, status: 201, location: [:api, user]
