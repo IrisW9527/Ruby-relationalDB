@@ -4,6 +4,7 @@ class Api::PhotosController < ApiController
 	# /api/photos
 	# show all photos
 	def index
+		# photo = Photo.find(title: params[:title],image: params[:image],user_id: params[:user_id])
 		render json: Photo.all, include: :comments
 	end
 
