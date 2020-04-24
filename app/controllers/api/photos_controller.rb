@@ -4,7 +4,7 @@ class Api::PhotosController < ApiController
 	# /api/photos
 	# show all photos
 	def index
-		render json: Photo.all
+		render json: Photo.all, include: :comments
 	end
 
 	# /api/photos/

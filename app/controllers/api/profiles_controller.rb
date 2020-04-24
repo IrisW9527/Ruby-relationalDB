@@ -4,7 +4,7 @@ class Api::ProfilesController < ApiController
 	def show
 		profile = Profile.find_by(user_id: params[:user_id])
 		if profile
-			render json:profile
+			render json:profile, status: 200
 		else
 			render json: {error: 'profile not found'}, status: 404
 		end

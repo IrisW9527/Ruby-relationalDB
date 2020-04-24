@@ -36,15 +36,16 @@ users[2].groups = [groups[0],groups[2], groups[3],groups[4],groups[5]]
 
 
 Photo.create! [
-	{title: 'image1', image: 'placeholder1', user_id: users[0].id},
-	{title: 'image2', image: 'placeholder2', user_id: users[1].id},
-	{title: 'image3', image: 'placeholder3', user_id: users[2].id}
+	{title: 'image1', image: 'paris', user_id: users[0].id},
+	{title: 'image2', image: 'berlin', user_id: users[1].id},
+	{title: 'image3', image: 'amsterdam', user_id: users[2].id}
 ]
 
 
 cmt = Photo.find_by title: 'image1'
 cmt.comments.create! [
-	{description: 'all covid19 mistakes'}
+	{description: 'all covid19 mistakes'},
+	{description: 'hello world'}
 ]
 
 cmt = Photo.find_by title: 'image2'
