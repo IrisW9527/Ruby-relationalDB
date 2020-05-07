@@ -10,13 +10,13 @@ Photo.destroy_all
 
 
 users = User.create! [
-	{username: 'patate',  password: 'qwe123',email: 'irisw9527@gmail.com'},
+	{username: 'janedoe',  password: 'qwe123',email: 'janed@gmail.com'},
 	{username: 'doja123', password: '123123',email: 'doj@gmail.com'},
 	{username: 'tomnjerry',  password: '234wer',email: 'tom@gmail.com'}
 ]
 
 Profile.create! [
-	{firstname: 'Iris', lastname: 'Wang',bio: 'hello world', user_id: users[0].id },
+	{firstname: 'Jane', lastname: 'Doe',bio: 'hello world', user_id: users[0].id },
 	{firstname: 'Coco', lastname: 'Chanel',bio: 'im a singer', user_id: users[1].id },
 	{firstname: 'Tom', lastname: 'TheCat',bio: 'i like cartoons', user_id: users[2].id }
 ]
