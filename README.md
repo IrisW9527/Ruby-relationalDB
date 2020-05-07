@@ -17,8 +17,10 @@ The JSON formats are also accessible through the following API endpoints:
 - get photo's info by passing its 'title': https://prophase2.herokuapp.com/api/photos/search?title=image1
 - get a user's info by passing its user id: https://prophase2.herokuapp.com/api/users/1
 
-For http POST requests:
-User authentication can be logged in through urls and an authentication token ("autotoken") will be returned in JSON. The token can be used to retrieve user's personal information.
+For POST requests:
+- User authentication can be logged in through urls and an authentication token ("autotoken") will be returned in JSON. The token can be used to retrieve user's personal information.
+- can be tested with localhost in Postman.
+
 
 1. The application has Users/Photos/Profile/Comments/Groups 5 models with their associated controllers & views
 2. The application has 1 nested resource(Photos & Comments)
